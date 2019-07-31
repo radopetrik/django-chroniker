@@ -284,7 +284,7 @@ class JobAdmin(admin.ModelAdmin):
         dt = obj.next_run
         dt = utils.localtime(dt)
         value = capfirst(dateformat.format(dt, fmt))
-        return "%s<br /><span class='mini'>(%s)</span>" % (value, obj.get_timeuntil())
+        return mark_safe("%s<br /><span class='mini'>(%s)</span>" % (value, obj.get_timeuntil()))
     get_timeuntil.admin_order_field = 'next_run'
     get_timeuntil.allow_tags = True
     get_timeuntil.short_description = _('next scheduled run')
