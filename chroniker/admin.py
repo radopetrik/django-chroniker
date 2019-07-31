@@ -699,7 +699,7 @@ class MonitorAdmin(admin.ModelAdmin):
         buttons = []
         buttons.append('<a href="%s" class="button">Check now</a>' % '%d/run/?inline=1' % obj.id)
         buttons.append(('<a href="/admin/chroniker/job/%i/" target="_blank" class="button">Edit</a>') % (obj.id,))
-        return ' '.join(buttons)
+        return mark_safe(' '.join(buttons))
     action_buttons.allow_tags = True
     action_buttons.short_description = 'Actions'
 
